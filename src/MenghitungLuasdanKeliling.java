@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class menghitungluasdankeliling {
+public class MenghitungLuasdanKeliling {
 
     public static void main(String[] args) {
         String csvFile = "src/data/data/trapezoid.csv";
