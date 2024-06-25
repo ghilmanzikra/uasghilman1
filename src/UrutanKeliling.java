@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,10 +39,15 @@ public class UrutanKeliling {
             }
         });
 
-        int index = 1;
-        for (DataTrapezoid trapezoid : trapezoids) {
-            System.out.println("keliling " + index + ": " + trapezoid.calculatePerimeter());
-            index++;
+        try (FileWriter writer = new FileWriter("urutankeliling.txt")) {
+            writer.write("Ini urutan keliling dari terkecil sampai terbesar:\n");
+            int index = 1;
+            for (DataTrapezoid trapezoid : trapezoids) {
+                writer.write("keliling " + index + ": " + trapezoid.calculatePerimeter() + "\n");
+                index++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
